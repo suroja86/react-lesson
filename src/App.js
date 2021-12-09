@@ -2,6 +2,15 @@ import React from 'react';
 import Button from "./components/Button/button";
 
 const App = () => {
+    const login = () => {
+        alert("Pressed Login button!");
+        /*TODO*/
+    }
+
+    const loginGoogle = () => {
+        alert("Pressed Login with Google button!");
+        /*TODO*/
+    }
     return (
         <div>
             <div>
@@ -24,12 +33,6 @@ const App = () => {
     );
 }
 
-const login = () => {
-    /*TODO*/
-}
 
-const loginGoogle = () => {
-    /*TODO*/
-}
 
 export default App;
