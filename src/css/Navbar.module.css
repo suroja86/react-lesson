@@ -1,12 +1,14 @@
 .nav {
     grid-area: n;
     background-color: blueviolet;
+    padding: 20px;
+    line-height: 25px;
 }
 
-.item {
+.item a {
     color: white;
 }
 
-.item.active {
-    background-color: lime;
+.item a.active {
+    background-color: #005a00;
 }
