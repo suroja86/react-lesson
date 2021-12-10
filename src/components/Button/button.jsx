@@ -1,11 +1,10 @@
 import React from 'react';
-import s from './button.module.css'
+import './button.sass'
 
 const Button = (props) => {
     return(
         <button
-            className={s.loginButton}
-            style={{background: "linear-gradient(90deg, "+props.linearColorStop+" 3.64%, "+props.colorHint+" 100%"}}
+            className={props.class}
             onClick={props.event}
         >
             {props.name}

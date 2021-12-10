@@ -16,6 +16,7 @@ const App = () => {
             <div>
                 <Button
                     name="Увійти"
+                    class="loginButton red"
                     linearColorStop="#072468"
                     colorHint="#0F49D3"
                     event={login}
@@ -24,6 +25,7 @@ const App = () => {
             <div>
                 <Button
                     name="Увійти через Google"
+                    class="loginButton blue"
                     linearColorStop="#FE3030"
                     colorHint="#FE3030"
                     event={loginGoogle}
