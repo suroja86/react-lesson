@@ -1,33 +1,34 @@
 import React from 'react';
 import Button from "./components/Button/button";
+import { useSelector, useDispatch } from 'react-redux';
+import {decrement, increment} from "./components/counter/counterSlice";
 
 const App = () => {
     const login = () => {
-        alert("Pressed Login button!");
+        dispatch(increment());
         /*TODO*/
     }
 
     const loginGoogle = () => {
-        alert("Pressed Login with Google button!");
+        dispatch(decrement());
         /*TODO*/
     }
+    const count = useSelector((state) => state.counter.value)
+    const dispatch = useDispatch()
     return (
         <div>
             <div>
                 <Button
                     name="Увійти"
                     class="loginButton red"
-                    linearColorStop="#072468"
-                    colorHint="#0F49D3"
                     event={login}
                 />
             </div>
+            <span>Count: {count}</span>
             <div>
                 <Button
                     name="Увійти через Google"
                     class="loginButton blue"
-                    linearColorStop="#FE3030"
-                    colorHint="#FE3030"
                     event={loginGoogle}
                 />
             </div>
