@@ -15,10 +15,10 @@ const App = (props) => {
             <div>
                 <Route
                     path='/page'
-                    render={() => <Page />}/>
+                    render={() => <Page state={props.state}/>}/>
                 <Route
                     path='/login'
-                    render={() => <ButtonsWithCounter />}/>
+                    render={() => <ButtonsWithCounter state={props.state}/>}/>
             </div>
         </div>
     );
