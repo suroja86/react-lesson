@@ -2,7 +2,7 @@ import React from "react";
 import './Navigation.sass'
 import {NavLink} from "react-router-dom";
 
-let Navigation = (props) => {
+const Navigation = (props) => {
     return (
         <nav className={props.componentClass}>
             <div>
