@@ -1,36 +1,24 @@
 import React from 'react';
-import Button from "./components/Button/button";
-import { useSelector, useDispatch } from 'react-redux';
-import {decrement, increment} from "./components/counter/counterSlice";
+import Navigation from "./components/Navigation/Navigation";
+import ButtonsWithCounter from "./components/Button/buttons";
+import Page from "./components/Paage/Page";
+import {Route} from "react-router-dom";
+import './main.sass';
 
-const App = () => {
-    const login = () => {
-        dispatch(increment());
-        /*TODO*/
-    }
+const App = (props) => {
 
-    const loginGoogle = () => {
-        dispatch(decrement());
-        /*TODO*/
-    }
-    const count = useSelector((state) => state.counter.value)
-    const dispatch = useDispatch()
     return (
-        <div>
+        <div className={props.componentClass}>
             <div>
-                <Button
-                    name="Увійти"
-                    class="loginButton red"
-                    event={login}
-                />
+                <Navigation componentClass={'navigation'}/>
             </div>
-            <span>Count: {count}</span>
             <div>
-                <Button
-                    name="Увійти через Google"
-                    class="loginButton blue"
-                    event={loginGoogle}
-                />
+                <Route
+                    path='/page'
+                    render={() => <Page />}/>
+                <Route
+                    path='/login'
+                    render={() => <ButtonsWithCounter />}/>
             </div>
         </div>
     );
