@@ -5,8 +5,6 @@ import Navbar from "./components/Navbar";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Profile from "./components/Profile/Profile";
 import Route from "react-router-dom/es/Route";
-import {updateNewPostText} from "./state";
-
 
 const App = (props) => {
     return (
@@ -18,8 +16,7 @@ const App = (props) => {
                         path='/profile'
                         render={() => <Profile
                             profilePage={props.state.profilePage}
-                            addPost={props.addPost}
-                            updateNewPostText={updateNewPostText}
+                            dispatch={props.dispatch}
                         />}/>
                     <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
                 </div>

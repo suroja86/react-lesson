@@ -2,18 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from "./App";
-import {addPost, subscribe, updateNewPostText} from "./state";
 import {BrowserRouter} from "react-router-dom";
-import state from './state'
+import store from './state'
 
 let renderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />
+            <App
+                state={store.getState()}
+                dispatch={store.dispatch.bind(store)}
+            />
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-renderEntireTree();
-subscribe(renderEntireTree);
+renderEntireTree(store.getState());
+store.subscribe(renderEntireTree);
