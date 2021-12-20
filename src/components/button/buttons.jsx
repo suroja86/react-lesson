@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.sass'
+import './button.scss';
 import Button from "./button";
 import {decrement, increment} from "../counter/counterSlice";
 import {useDispatch, useSelector} from "react-redux";

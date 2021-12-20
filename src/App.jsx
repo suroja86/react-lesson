@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from "./components/Navigation/Navigation";
-import ButtonsWithCounter from "./components/Button/buttons";
+import ButtonsWithCounter from "./components/button/buttons";
 import Page from "./components/Paage/Page";
 import {Route} from "react-router-dom";
 import './main.sass';
