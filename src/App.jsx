@@ -1,9 +1,9 @@
 import React from 'react';
 import Navigation from "./components/Navigation/Navigation";
 import ButtonsWithCounter from "./components/button/buttons";
-import Page from "./components/Paage/Page";
+import Messages from "./components/Messages/Messages";
 import {Route} from "react-router-dom";
-import './main.sass';
+import './main.scss';
 
 const App = (props) => {
 
@@ -15,10 +15,13 @@ const App = (props) => {
             <div>
                 <Route
                     path='/page'
-                    render={() => <Page state={props.state}/>}/>
+                    render={() => <Messages
+                        store={props.store}
+                        appConfig={props.appConfig}
+                    />}/>
                 <Route
                     path='/login'
-                    render={() => <ButtonsWithCounter state={props.state}/>}/>
+                    render={() => <ButtonsWithCounter state={props.appConfig}/>}/>
             </div>
         </div>
     );

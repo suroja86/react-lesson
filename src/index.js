@@ -1,16 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./App";
-import store from './store'
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
-import state from './state';
+import store from "./store/store";
+import appConfig from "./appConfig";
 
-ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App componentClass={'content'} state={state}/>
-        </BrowserRouter>
-    </Provider>,
-  document.getElementById('root')
-);
+let renderPage = () => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <BrowserRouter>
+                <App
+                    componentClass={'content'}
+                    state={store.getState()}
+                    store={store}
+                    dispatch={store.dispatch.bind(store)}
+                    appConfig={appConfig}
+                />
+            </BrowserRouter>
+        </Provider>,
+        document.getElementById('root')
+    );
+}
+
+renderPage(store.getState());
+
+store.subscribe(() => {
+    renderPage(store.getState());
+})

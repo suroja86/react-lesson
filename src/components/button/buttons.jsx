@@ -1,7 +1,6 @@
 import React from 'react';
-import './button.scss';
 import Button from "./button";
-import {decrement, increment} from "../counter/counterSlice";
+import {decrement, increment} from "../reducer/counterSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 const ButtonsWithCounter = (props) => {
@@ -19,7 +18,7 @@ const ButtonsWithCounter = (props) => {
             <div>
                 <Button
                     name={props.state.buttons.login}
-                    class={'loginButton red'}
+                    color={'red'}
                     event={login}
                 />
             </div>
@@ -27,7 +26,7 @@ const ButtonsWithCounter = (props) => {
             <div>
                 <Button
                     name={props.state.buttons.loginGoogle}
-                    class={'loginButton blue'}
+                    color={'blue'}
                     event={loginGoogle}
                 />
             </div>
