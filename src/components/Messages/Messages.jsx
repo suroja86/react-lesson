@@ -6,17 +6,17 @@ import {useDispatch} from "react-redux";
 import PropTypes from "prop-types";
 
 let Messages = (props) => {
-    let state = props.store.getState().messagePage;
-    let listMessages = state.messages.map( (m) => <p>{m.message}</p> );
-    let onSendMessageClick = () => {
+    const state = props.store.getState().messagePage;
+    const listMessages = state.messages.map((m) => <p>{m.message}</p>);
+    const onSendMessageClick = () => {
         // props.store.dispatch(sedMessageCreator())
         dispatch(sedMessageCreator());
-    }
+    };
 
-    let onNewMessageChange = (e) => {
+    const onNewMessageChange = (e) => {
         let newMessage = e.target.value;
         props.store.dispatch(updateNewMessageCreator(newMessage));
-    }
+    };
 
     const dispatch = useDispatch()
 

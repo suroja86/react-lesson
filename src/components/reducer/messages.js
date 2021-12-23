@@ -12,9 +12,9 @@ const messageReducer = (state = initialState, action) => {
             state.newMessage = action.message;
             break;
         case SEND_MESSAGE:
-            let newMessage = {
+            const newMessage = {
                 message: state.newMessage,
-            }
+            };
             state.messages.push(newMessage);
             state.newMessage = '';
             break;

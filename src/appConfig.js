@@ -1,4 +1,4 @@
-let appConfig = {
+const appConfig = {
     buttons: {
         login: 'Увійти',
         loginGoogle: 'Увійти через Google',
@@ -10,6 +10,6 @@ let appConfig = {
         messages: 'Сторiнка повiдомлень',
     },
     inputText: 'Some text',
-}
+};
 
 export default appConfig;

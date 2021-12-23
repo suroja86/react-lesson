@@ -6,7 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 import store from "./store/store";
 import appConfig from "./appConfig";
 
-let renderPage = () => {
+const renderPage = () => {
     ReactDOM.render(
         <Provider store={store}>
             <BrowserRouter>
@@ -21,7 +21,7 @@ let renderPage = () => {
         </Provider>,
         document.getElementById('root')
     );
-}
+};
 
 renderPage(store.getState());
 

@@ -3,7 +3,7 @@ import './button.scss';
 import PropTypes from "prop-types";
 
 const Button = (props) => {
-    let color = props.color ? props.color : 'blue';
+    const color = props.color ? props.color : 'blue';
     return(
         <button
             className={'loginButton ' + color}
