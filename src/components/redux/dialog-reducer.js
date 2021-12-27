@@ -20,19 +20,20 @@ const initialState = {
 const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            break;
+            return { //state copy
+                ...state,
+                newMessageBody: action.body,
+            };
         case SEND_MESSAGE:
             let body = state.newMessageBody;
-            state.newMessageBody = '';
-            let newMessage = {
-                id: 10,
-                message: body
-            }
-            state.messagesData.push(newMessage);
-            break;
+            return  { //state copy
+                ...state,
+                newMessageBody: '',
+                messagesData: [...state.messagesData, {id: 10, message: body}]
+            };
+        default:
+            return state;
     }
-    return state;
 }
 
 export const sedMessageCreator = () => ({ type: SEND_MESSAGE, });
