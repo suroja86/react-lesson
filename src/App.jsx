@@ -4,9 +4,11 @@ import ButtonsWithCounter from "./components/button/buttons";
 import Messages from "./components/Messages/Messages";
 import {Route} from "react-router-dom";
 import './main.scss';
+import store from "./store/store";
+import MessagesLocal from "./components/Messages/MessagesLocal";
+import Table from "./components/TableView/Table";
 
 const App = (props) => {
-
     return (
         <div className={props.componentClass}>
             <div>
@@ -17,11 +19,19 @@ const App = (props) => {
                     path='/page'
                     render={() => <Messages
                         store={props.store}
-                        appConfig={props.appConfig}
+                    />}/>
+                <Route
+                    path='/messages'
+                    render={() => <MessagesLocal
+                        store={props.store}
                     />}/>
                 <Route
                     path='/login'
-                    render={() => <ButtonsWithCounter state={props.appConfig}/>}/>
+                    render={() => <ButtonsWithCounter
+                    />}/>
+                <Route
+                    path='/table'
+                    render={() => <Table />}/>
             </div>
         </div>
     );

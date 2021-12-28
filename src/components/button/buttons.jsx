@@ -17,7 +17,7 @@ const ButtonsWithCounter = (props) => {
         <div className={'buttonsWrapper'}>
             <div>
                 <Button
-                    name={props.state.buttons.login}
+                    name={props.nameLogin}
                     color={'red'}
                     event={login}
                 />
@@ -25,7 +25,7 @@ const ButtonsWithCounter = (props) => {
             <span>Count: {count}</span>
             <div>
                 <Button
-                    name={props.state.buttons.loginGoogle}
+                    name={props.nameLoginWithGoogle}
                     color={'blue'}
                     event={loginGoogle}
                 />
@@ -35,3 +35,8 @@ const ButtonsWithCounter = (props) => {
 }
 
 export default ButtonsWithCounter;
+
+ButtonsWithCounter.defaultProps = {
+    nameLogin: 'Увійти',
+    nameLoginWithGoogle: 'Увійти через Google'
+};

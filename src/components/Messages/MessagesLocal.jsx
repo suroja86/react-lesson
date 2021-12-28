@@ -4,20 +4,26 @@ import {sedMessageCreator, updateNewMessageCreator} from "../reducer/messages";
 import Button from "../button/button";
 import {useDispatch} from "react-redux";
 import PropTypes from "prop-types";
+import messageState from './messagesState';
+import {renderPage} from "../../index";
 
-const Messages = (props) => {
-    const state = props.store.getState().messagePage;
-    const listMessages = state.messages.map((m) => <p>{m.message}</p>);
+const MessagesLocal = (props) => {
+    const listMessages = messageState.messagesData.map((m) => <p>{m.message}</p>);
     const onSendMessageClick = () => {
-        dispatch(sedMessageCreator());
+        messageState.messagesData.push({
+            id: 5,
+            message: messageState.newMessage
+        });
+        messageState.newMessage = '';
+        renderPage();
     };
 
     const onNewMessageChange = (e) => {
-        let newMessage = e.target.value;
-        props.store.dispatch(updateNewMessageCreator(newMessage));
+        // debugger;
+        messageState.newMessage = e.target.value;
+        renderPage();
     };
 
-    const dispatch = useDispatch()
 
     return (
         <div className={'wrapper'}>
@@ -26,7 +32,7 @@ const Messages = (props) => {
                 {listMessages}
             </div>
             <input
-                value={state.newMessage}
+                value={messageState.newMessage}
                 onChange={onNewMessageChange}
                 placeholder={props.placeHolder}
             />
@@ -37,15 +43,15 @@ const Messages = (props) => {
     );
 };
 
-Messages.propTypes = {
+MessagesLocal.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string.isRequired,
 }
 
-Messages.defaultProps = {
+MessagesLocal.defaultProps = {
     pageTitle: 'Сторiнка повiдомлень',
     placeHolder: 'Введiть повiдомлення'
 };
 
-export default Messages;
+export default MessagesLocal;
