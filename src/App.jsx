@@ -4,7 +4,6 @@ import ButtonsWithCounter from "./components/button/buttons";
 import Messages from "./components/Messages/Messages";
 import {Route} from "react-router-dom";
 import './main.scss';
-import store from "./store/store";
 import MessagesLocal from "./components/Messages/MessagesLocal";
 import Table from "./components/TableView/Table";
 

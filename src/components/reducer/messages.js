@@ -10,16 +10,17 @@ const messageReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE:
             state.newMessage = action.message;
-            break;
+            return state;
         case SEND_MESSAGE:
             const newMessage = {
                 message: state.newMessage,
             };
             state.messages.push(newMessage);
             state.newMessage = '';
-            break;
+            return state;
+        default: return state;
     }
-    return state;
+
 }
 
 export const sedMessageCreator = () => ({ type: SEND_MESSAGE, });

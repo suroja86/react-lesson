@@ -1,8 +1,6 @@
 import React from 'react';
 import './messages.scss'
-import {sedMessageCreator, updateNewMessageCreator} from "../reducer/messages";
 import Button from "../button/button";
-import {useDispatch} from "react-redux";
 import PropTypes from "prop-types";
 import messageState from './messagesState';
 import {renderPage} from "../../index";
@@ -37,16 +35,16 @@ const MessagesLocal = (props) => {
                 placeholder={props.placeHolder}
             />
             <div>
-                <Button event={onSendMessageClick} name={'Send message'}/>
+                <Button onClick={onSendMessageClick} name={'Send message'}/>
             </div>
         </div>
     );
 };
 
 MessagesLocal.propTypes = {
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    placeholder: PropTypes.string,
 }
 
 MessagesLocal.defaultProps = {

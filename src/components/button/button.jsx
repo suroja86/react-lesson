@@ -7,7 +7,7 @@ const Button = (props) => {
     return(
         <button
             className={'loginButton ' + color}
-            onClick={props.event}
+            onClick={props.onClick}
         >
             {props.name}
         </button>
@@ -18,6 +18,6 @@ export default Button;
 
 Button.propTypes = {
     color: PropTypes.oneOf(['', 'blue', 'red']),
-    event: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    name: PropTypes.string,
 }

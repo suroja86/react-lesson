@@ -31,16 +31,16 @@ const Messages = (props) => {
                 placeholder={props.placeHolder}
             />
             <div>
-                <Button event={onSendMessageClick} name={'Send message'}/>
+                <Button onClick={onSendMessageClick} name={'Send message'}/>
             </div>
         </div>
     );
 };
 
 Messages.propTypes = {
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    placeholder: PropTypes.string,
 }
 
 Messages.defaultProps = {

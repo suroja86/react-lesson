@@ -19,7 +19,7 @@ const ButtonsWithCounter = (props) => {
                 <Button
                     name={props.nameLogin}
                     color={'red'}
-                    event={login}
+                    onClick={login}
                 />
             </div>
             <span>Count: {count}</span>
@@ -27,7 +27,7 @@ const ButtonsWithCounter = (props) => {
                 <Button
                     name={props.nameLoginWithGoogle}
                     color={'blue'}
-                    event={loginGoogle}
+                    onClick={loginGoogle}
                 />
             </div>
         </div>

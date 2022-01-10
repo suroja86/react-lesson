@@ -1,9 +1,4 @@
 
-
-let renderPage = () => {
-    console.log('state was chanched')
-}
-
 let messagesState = {
         messagesData: [
             {id: 1, message: "kjhjkjhgh j hghjkjhbgi i gvuukhbuh"},
